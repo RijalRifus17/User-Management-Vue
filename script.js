@@ -75,6 +75,7 @@ const vue = new Vue({
             newUser.id = lastId + 1
             
             users.push(newUser)
+            this.resetFormUser()
         },
         updateUser(userSelected) {
             this.editUser = userSelected
@@ -101,6 +102,13 @@ const vue = new Vue({
                 if(user.id == userId) {
                     return i
                 }
+            }
+        },
+        resetFormUser() {
+            this.formUser = {
+                first_name: '',
+                last_name:'',
+                gender: 'Male'
             }
         }
     },
